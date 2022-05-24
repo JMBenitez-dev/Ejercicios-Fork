@@ -1,11 +1,11 @@
 document.getElementById("app").innerHTML = `
-  <h1>Sumar Dos Arreglos</h1>
+  <h1>Suma Elementos Arreglo</h1>
 `;
 
 let TamanioArreglo = Number(prompt("Ingrese la cantidad de nombres a cargar"));
 let Arreglo: number[] = new Array(TamanioArreglo);
 
-let Suma: number;
+let SumaElementos: number;
 
 function LeerArreglo(
   Arreglo: number[],
@@ -24,24 +24,12 @@ function LeerArreglo(
   return Arreglo;
 }
 
-function SumarArreglo(
-  arreglo1: number[],
-  arreglo2: number[],
-  tamanio: number
-): number[] {
-  let SumaArreglos: number[] = new Array(tamanio);
-  for (let i: number = 0; i < 6; i++) {
-    SumaArreglos[i] = arreglo1[i] + arreglo2[i];
-  }
-  return SumaArreglos;
-}
-
 function SumaArreglo(arreglo1: number[], tamanio: number): number {
-  let Suma: number;
+  let Suma: number = 0;
   for (let i: number = 0; i < tamanio; i++) {
     Suma = Suma + arreglo1[i];
   }
-  return SumaArreglos;
+  return Suma;
 }
 
 function MostrarArreglo(
@@ -57,20 +45,7 @@ function MostrarArreglo(
 }
 
 Arreglo = LeerArreglo(Arreglo, TamanioArreglo, "Arreglo");
-MostrarArreglo(Arreglo1, 6, "Arreglo 1");
-Arreglo2 = LeerArreglo(Arreglo2, 6, "Arreglo 2");
-MostrarArreglo(Arreglo2, 6, "Arreglo 2");
-SumaArreglo1y2 = SumarArreglo(Arreglo1, Arreglo2, 6);
-MostrarArreglo(SumaArreglo1y2, 6, "arreglo de la suma de los Arreglos 1 y 2");
+MostrarArreglo(Arreglo, TamanioArreglo, "Arreglo");
+SumaElementos = SumaArreglo(Arreglo, TamanioArreglo);
 
-/* Podría llamar todo así y no necesitaría definir Arreglo1, Arreglo2 y SumaArreglo1y2
-MostrarArreglo(
-  SumarArreglo(
-    LeerArreglo(Arreglo1, 6, "Arreglo 1"),
-    LeerArreglo(Arreglo2, 6, "Arreglo 2"),
-    6
-  ),
-  6,
-  "arreglo de la suma de los Arreglos 1 y 2"
-);
-*/
+console.log(`La suma de los elementos del arreglo es: ${SumaElementos}`);

@@ -11,6 +11,7 @@ function LeerArreglo(
   Tamanio: number,
   NombreArreglo: string
 ): number[] {
+  let CopiaArreglo: number[] = new Array(Tamanio); //Copio para no modificar el que ingresa.
   for (let i: number = 0; i < Tamanio; i++) {
     let NumeroLeido: number;
     NumeroLeido = Number(
@@ -18,9 +19,9 @@ function LeerArreglo(
         `Indique el número que desea incorporar en la posición ${i} del ${NombreArreglo}: `
       )
     );
-    Arreglo[i] = NumeroLeido;
+    CopiaArreglo[i] = NumeroLeido;
   }
-  return Arreglo;
+  return CopiaArreglo;
 }
 
 function SumarArreglo(
